@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700;900&display=swap");
+:root {
+  color-scheme: dark light;
+  --bkg-color: #ebeff3;
+  --text-color: #323e4d;
+  --anchor-color: #19222e;
+  --anchor-hover-color: #51647e;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 13pt;
+  line-height: 1.5;
+}
+::selection,
+::-moz-selection {
+  color: #1b1d22;
+  background: #9ba5b3;
+}
+body.light-theme {
+  --bkg-color: #1b1d22;
+  --text-color: #9ba5b3;
+  --anchor-color: #ddd;
+  --anchor-hover-color: #9ba5b3;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: #9ba5b3;
+    --bkg-color: #1b1d22;
+    --anchor-color: #ddd;
+    --anchor-hover-color: #9ba5b3;
+  }
+  body.light-theme {
+    color-scheme: dark light;
+    --text-color: #252e3a;
+    --bkg-color: #ebeff3;
+    --anchor-color: #33445a;
+    --anchor-hover-color: #252e3a;
+  }
+}
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+body,
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
+}
+body {
+  background: var(--bkg-color);
+  padding: 0;
+  margin: 0;
+  color: var(--text-color);
+  transition: all 0.5s;
+}
+.content-grid {
+  display: grid;
+  grid-template-columns: [full-width-start] 20px [breakout-start] 20px [content-start] 1fr [content-end] 20px [breakout-end] 20px [full-width-end];
+  max-width: 570px;
+  margin: 0 auto;
+}
+.content-grid > * {
+  grid-column: content;
+}
+.content-grid > .breakout {
+  grid-column: breakout;
+}
+.content-grid > .full-width {
+  grid-column: full-width;
+}
+a {
+  text-decoration: none;
+  color: var(--anchor-color);
+  font-weight: 500;
+}
+a:hover {
+  color: var(--anchor-hover-color);
+  transition: all 0.25s;
+}
+#info ul {
+  list-style: none;
+  padding-left: 0;
+}
+#info ul li {
+  float: left;
+  font-size: 10.5pt;
+  color: var(--anchor-color);
+  margin-right: 5%;
+  margin-bottom: 5px;
+}
+#info ul li a {
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: all 0.25s;
+}
+#info ul li a:hover {
+  border-bottom: 2px solid var(--anchor-hover-color);
+}
+#info ul li img {
+  margin-right: 5px;
+  margin-bottom: -5px;
+  width: 20px;
+  height: auto;
+  opacity: 0.65;
+}
+h1 {
+  font-size: 20pt;
+  font-weight: 700;
+}
+h1#title {
+  margin-bottom: -5px;
+  color: var(--anchor-color);
+}
+h2 {
+  font-size: 16pt;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--anchor-color);
+  margin: 40px 0;
+}
+label#subtitle {
+  font-size: 11pt;
+  font-weight: 500;
+}
+p#hello {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+#hero {
+  margin-top: 15%;
+  margin-bottom: 30px;
+}
+article {
+  margin-bottom: 45px;
+}
+article ul {
+  list-style: none;
+  padding: 0;
+}
+article ul li {
+  position: relative;
+}
+article ul li h3 {
+  font-weight: 300;
+  margin: 0;
+}
+article ul li label {
+  font-size: 11pt;
+}
+article div.left {
+  float: left;
+  width: 40%;
+  margin-right: 5%;
+  font-size: 10pt;
+  padding-top: 8px;
+}
+article#experience div.left {
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+article#experience a,
+article#experience a img,
+article#experience a svg {
+  color: var(--anchor-color);
+  fill: var(--anchor-color);
+}
+article div.right {
+  float: left;
+  width: 55%;
+  padding-bottom: 45px;
+}
+article ul li p {
+  font-size: 11pt;
+}
+article#experience ul li legend img {
+  width: 20px;
+  height: auto;
+  margin: 0 15px 15px 0;
+  vertical-align: middle;
+}
+article#experience ul li legend img.wide {
+  width: 50px;
+  height: auto;
+}
+article#work .right li {
+  margin-bottom:10px;
+}
+article#work .right a {
+  font-size:11pt;
+}
+article#findme .right {
+  margin-top: 30px;
+  font-size: 12pt;
+}
+article#findme ul li {
+  margin-bottom: 15px;
+}
+article#findme .right img {
+  width: 20px;
+  margin-right: 10px;
+  height: auto;
+  vertical-align: middle;
+  margin-top:-4px;
+}
+article#findme .right a {
+  vertical-align: middle;
+}
+footer {
+  margin: 120px 0;
+}
+footer div {
+  font-size: 10pt;
+  font-weight: 600;
+  margin-top: 24px;
+}
+.tooltip {
+  border-bottom: 2px dotted var(--anchor-color);
+  padding-bottom: 1px;
+  cursor: cell;
+}
+.tooltip:hover {
+  border-bottom: 2px dotted var(--anchor-hover-color);
+}
+.tooltip:hover span {
+  display: block;
+}
+.tooltip span {
+  display: none;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: -100px;
+  z-index: 1000;
+}
+.tooltip span img {
+  max-width: 300px;
+  border-radius: 10px;
+}
+#hero.tooltip {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
+  #info ul li {
+    float: none;
+  }
+}
